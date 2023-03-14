@@ -1,0 +1,32 @@
+ul {
+  padding: 0;
+}
+
+.main-container {
+  padding: 2rem;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.form-submit-btn {
+  background-color: #666;
+  padding: 0.75rem;
+  border: 1px solid #656;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+}
