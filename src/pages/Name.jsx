@@ -4,11 +4,11 @@ import MyName from "../components/name/MyName";
 
 const Name = () => {
   return (
-    <div className="main-container">
+    <>
       <h1>My Name Changing</h1>
       <NameForm />
       <MyName />
-    </div>
+    </>
   );
 };
 

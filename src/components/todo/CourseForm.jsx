@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./CourseForm.css";
 
 import useCourseStore from "../../app/courseStore";
@@ -6,35 +5,26 @@ import useCourseStore from "../../app/courseStore";
 const CourseForm = () => {
   const addCourse = useCourseStore((state) => state.addCourse);
 
-  const [courseTitle, setCourseTitle] = useState("");
-
-  const handleCourseSubmit = () => {
-    if (!courseTitle) return alert("please add a course title");
+  const handleCourseSubmit = (e) => {
+    e.preventDefault();
+    let courseTitle = e.target.name.value;
+    if (!courseTitle) return alert("Please add a course title");
     addCourse({
       id: Date.now(),
       title: courseTitle,
     });
-    setCourseTitle("");
+    e.target.name.value = "";
   };
 
   return (
-    <div className="form-container">
-      <input
-        value={courseTitle}
-        onChange={(e) => {
-          setCourseTitle(e.target.value);
-        }}
-        className="form-input"
-      />
-      <button
-        onClick={() => {
-          handleCourseSubmit();
-        }}
-        className="form-submit-btn"
-      >
-        Add Course
-      </button>
-    </div>
+    <>
+      <form onSubmit={handleCourseSubmit}>
+        <input name="name" className="form-input" />
+        <button type="submit" className="form-submit-btn">
+          Add Course
+        </button>
+      </form>
+    </>
   );
 };
 

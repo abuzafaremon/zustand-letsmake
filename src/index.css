@@ -12,6 +12,17 @@ li {
   list-style: none;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid;
+  padding: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
